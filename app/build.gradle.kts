@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import dependencies.Dependencies
-import dependencies.DebugDependencies
 import dependencies.AnnotationProcessorsDependencies
+import dependencies.DebugDependencies
+import dependencies.Dependencies
 import extensions.addTestsDependencies
-import extensions.implementation
 import extensions.debugImplementation
+import extensions.implementation
 import extensions.kapt
 
 plugins {
@@ -134,7 +134,10 @@ android {
         exclude("META-INF/licenses/**")
         exclude("META-INF/LGPL2.1")
     }
-    dynamicFeatures = mutableSetOf(BuildModules.Features.HOME)
+    dynamicFeatures = mutableSetOf(
+        BuildModules.Features.HOME,
+        BuildModules.Features.SPORTS
+    )
 }
 
 junitJacoco {

@@ -23,6 +23,7 @@ object BuildModules {
 
     object Features {
         const val HOME = ":features:home"
+        const val SPORTS = ":features:sports"
     }
 
     object Libraries {

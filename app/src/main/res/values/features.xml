@@ -3,4 +3,5 @@
 
     <!--Dynamic module titles-->
     <string name="feature_home">Home</string>
+    <string name="feature_sports">Sports</string>
 </resources>
