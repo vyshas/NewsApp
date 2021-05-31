@@ -8,9 +8,9 @@
 include(
     ":app",
     ":core",
-    ":libraries:test_utils"
+    ":libraries:test_utils",
+    ":core-domain",
+    ":core-data"
 )
 rootProject.name = "NewsApp"
 rootProject.buildFileName = "build.gradle.kts"
-
-
