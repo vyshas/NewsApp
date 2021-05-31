@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import dependencies.Dependencies
 import dependencies.AnnotationProcessorsDependencies
+import dependencies.Dependencies
 import extensions.implementation
 import extensions.kapt
 
@@ -41,6 +41,9 @@ dependencies {
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.MOSHI)
     implementation(Dependencies.MOSHI_KTX)
+    implementation(Dependencies.MOSHI_CODEGEN)
+    implementation(Dependencies.MOSHI_ADAPTER)
+    implementation(Dependencies.RETROFI_MOSHI_CONVERTER)
 
     kapt(AnnotationProcessorsDependencies.DATABINDING)
     kapt(AnnotationProcessorsDependencies.ROOM)
