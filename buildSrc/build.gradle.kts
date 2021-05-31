@@ -40,6 +40,7 @@ object PluginsVersions {
     const val SPOTLESS = "5.6.1"
     const val DETEKT = "1.14.1"
     const val GRAPH_GENERATOR = "0.6.0-SNAPSHOT"
+    const val HILT = "2.35"
 }
 
 dependencies {
@@ -54,4 +55,5 @@ dependencies {
     implementation("com.pinterest:ktlint:${PluginsVersions.KTLINT}")
     implementation("com.diffplug.spotless:spotless-plugin-gradle:${PluginsVersions.SPOTLESS}")
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${PluginsVersions.DETEKT}")
+    implementation("com.google.dagger:hilt-android-gradle-plugin:${PluginsVersions.HILT}")
 }

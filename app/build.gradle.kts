@@ -24,6 +24,7 @@ import extensions.kapt
 
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
+    id(BuildPlugins.HILT)
     id(BuildPlugins.KOTLIN_ANDROID)
     id(BuildPlugins.KOTLIN_KAPT)
     id(BuildPlugins.KOTLIN_ALLOPEN)
@@ -115,6 +116,9 @@ android {
             java.srcDir("src/androidTest/kotlin")
         }
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 junitJacoco {
@@ -133,10 +137,13 @@ dependencies {
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.PLAY_CORE)
     implementation(Dependencies.PLAY_CORE_KTX)
+
     implementation(Dependencies.DAGGER)
+    implementation(Dependencies.HILT)
 
     debugImplementation(DebugDependencies.LEAKCANARY)
 
+    kapt(AnnotationProcessorsDependencies.HILT)
     kapt(AnnotationProcessorsDependencies.DAGGER)
 
     addTestsDependencies()

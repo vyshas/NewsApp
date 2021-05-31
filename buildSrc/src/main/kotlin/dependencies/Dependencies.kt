@@ -38,6 +38,7 @@ object Dependencies {
     const val SWIPE_REFRESH_LAYOUT = "androidx.swiperefreshlayout:swiperefreshlayout:${BuildDependenciesVersions.SWIPE_REFRESH_LAYOUT}"
     const val PAGING = "androidx.paging:paging-runtime-ktx:${BuildDependenciesVersions.PAGING}"
     const val DAGGER = "com.google.dagger:dagger:${BuildDependenciesVersions.DAGGER}"
+    const val HILT = "com.google.dagger:hilt-android:${BuildDependenciesVersions.DAGGER}"
     const val TIMBER = "com.jakewharton.timber:timber:${BuildDependenciesVersions.TIMBER}"
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${BuildDependenciesVersions.RETROFIT}"
     const val RETROFIT_CONVERTER = "com.squareup.retrofit2:converter-gson:${BuildDependenciesVersions.RETROFIT}"

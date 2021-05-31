@@ -32,6 +32,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("kotlin-allopen")
+    id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs.kotlin")
     id("com.vanniktech.android.junit.jacoco")
     id("com.vanniktech.dependency.graph.generator")
@@ -98,6 +99,9 @@ android {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 junitJacoco {
@@ -118,11 +122,16 @@ dependencies {
     implementation(Dependencies.CORE_KTX)
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.CONSTRAIN_LAYOUT)
+
     implementation(Dependencies.DAGGER)
+    implementation(Dependencies.HILT)
+
     implementation(Dependencies.TIMBER)
     implementation(Dependencies.LOGGING)
 
+    kapt(AnnotationProcessorsDependencies.HILT)
     kapt(AnnotationProcessorsDependencies.DAGGER)
+
     kapt(AnnotationProcessorsDependencies.DATABINDING)
     kapt(AnnotationProcessorsDependencies.ROOM)
     kapt(AnnotationProcessorsDependencies.LIFECYCLE_COMPILER)

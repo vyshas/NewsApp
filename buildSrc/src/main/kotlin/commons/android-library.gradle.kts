@@ -32,6 +32,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
     id("kotlin-allopen")
     id("com.vanniktech.android.junit.jacoco")
     id("com.vanniktech.dependency.graph.generator")
@@ -94,10 +95,14 @@ dependencies {
     implementation(Dependencies.KOTLIN)
     implementation(Dependencies.COROUTINES)
     implementation(Dependencies.COROUTINES_ANDROID)
-    implementation(Dependencies.DAGGER)
-    implementation(Dependencies.TIMBER)
 
+    implementation(Dependencies.DAGGER)
+    implementation(Dependencies.HILT)
+
+    kapt(AnnotationProcessorsDependencies.HILT)
     kapt(AnnotationProcessorsDependencies.DAGGER)
+
+    implementation(Dependencies.TIMBER)
 
     testImplementation(project(BuildModules.Libraries.TEST_UTILS))
     addTestsDependencies()
