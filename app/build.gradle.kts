@@ -134,7 +134,7 @@ android {
         exclude("META-INF/licenses/**")
         exclude("META-INF/LGPL2.1")
     }
-
+    dynamicFeatures = mutableSetOf(BuildModules.Features.HOME)
 }
 
 junitJacoco {
