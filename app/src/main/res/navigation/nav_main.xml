@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/nav_home">
+
+    <include-dynamic
+        android:id="@+id/nav_home"
+        app:moduleName="home"
+        app:graphResName="nav_home"
+        app:graphPackage="${applicationId}.features.home" />
+    <include-dynamic
+        android:id="@+id/nav_sports"
+        app:moduleName="sports"
+        app:graphResName="nav_sports"
+        app:graphPackage="${applicationId}.features.sports" />
+
+</navigation>
