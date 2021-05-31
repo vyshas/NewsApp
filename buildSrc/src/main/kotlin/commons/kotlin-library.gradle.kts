@@ -16,13 +16,30 @@
 
 package commons
 
+import dependencies.AnnotationProcessorsDependencies
 import dependencies.Dependencies
+import dependencies.TestDependencies
 import extensions.implementation
+import extensions.kapt
+import gradle.kotlin.dsl.accessors._94f23b8d474cac2ca34143725ef406d2.testImplementation
 
 plugins {
     id("kotlin")
+    id("kotlin-kapt")
+    id("kotlin-allopen")
 }
 
 dependencies {
     implementation(Dependencies.KOTLIN)
+    implementation(Dependencies.COROUTINES)
+    implementation(Dependencies.TIMBER)
+
+    implementation(Dependencies.DAGGER)
+    kapt(AnnotationProcessorsDependencies.DAGGER)
+
+    implementation(TestDependencies.ASSERTJ)
+    implementation(TestDependencies.RULES)
+    implementation(TestDependencies.COROUTINES_TEST)
+    implementation(TestDependencies.EXT)
+    implementation(TestDependencies.MOCKK)
 }

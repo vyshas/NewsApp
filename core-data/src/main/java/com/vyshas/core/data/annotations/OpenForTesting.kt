@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.vyshas.core.annotations
+package com.vyshas.core.data.annotations
 
 /**
  * This annotation allows us to open some classes for mocking purposes while they are final in
