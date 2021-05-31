@@ -25,7 +25,6 @@ import dependencies.Dependencies
 import dependencies.AnnotationProcessorsDependencies
 import extensions.addTestsDependencies
 import extensions.implementation
-import extensions.testImplementation
 import extensions.kapt
 
 plugins {
@@ -115,7 +114,6 @@ dependencies {
     implementation(Dependencies.COROUTINES_ANDROID)
     implementation(Dependencies.NAVIGATION_FRAGMENT)
     implementation(Dependencies.NAVIGATION_UI)
-    implementation(Dependencies.LIFECYCLE_EXTENSIONS)
     implementation(Dependencies.LIFECYCLE_VIEWMODEL)
     implementation(Dependencies.CORE_KTX)
     implementation(Dependencies.FRAGMENT_KTX)
@@ -127,6 +125,7 @@ dependencies {
     kapt(AnnotationProcessorsDependencies.DAGGER)
     kapt(AnnotationProcessorsDependencies.DATABINDING)
     kapt(AnnotationProcessorsDependencies.ROOM)
+    kapt(AnnotationProcessorsDependencies.LIFECYCLE_COMPILER)
 
     testImplementation(project(BuildModules.Libraries.TEST_UTILS))
     addTestsDependencies()

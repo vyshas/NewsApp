@@ -18,10 +18,6 @@ import dependencies.Dependencies
 import dependencies.AnnotationProcessorsDependencies
 import extensions.implementation
 import extensions.kapt
-import extensions.getLocalProperty
-import extensions.buildConfigBooleanField
-import extensions.buildConfigIntField
-import extensions.buildConfigStringField
 
 plugins {
     id("commons.android-library")
@@ -35,7 +31,6 @@ allOpen {
 dependencies {
     implementation(Dependencies.ROOM)
     implementation(Dependencies.ROOM_KTX)
-    implementation(Dependencies.LIFECYCLE_EXTENSIONS)
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.CORE_KTX)
@@ -47,4 +42,5 @@ dependencies {
 
     kapt(AnnotationProcessorsDependencies.DATABINDING)
     kapt(AnnotationProcessorsDependencies.ROOM)
+    kapt(AnnotationProcessorsDependencies.LIFECYCLE_COMPILER)
 }

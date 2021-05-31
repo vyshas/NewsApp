@@ -25,7 +25,6 @@ import extensions.kapt
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
     id(BuildPlugins.KOTLIN_ANDROID)
-    id(BuildPlugins.KOTLIN_ANDROID_EXTENSIONS)
     id(BuildPlugins.KOTLIN_KAPT)
     id(BuildPlugins.KOTLIN_ALLOPEN)
     id(BuildPlugins.NAVIGATION_SAFE_ARGS)
@@ -133,10 +132,8 @@ dependencies {
     implementation(Dependencies.TIMBER)
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.PLAY_CORE)
+    implementation(Dependencies.PLAY_CORE_KTX)
     implementation(Dependencies.DAGGER)
-    implementation("androidx.appcompat:appcompat:1.3.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 
     debugImplementation(DebugDependencies.LEAKCANARY)
 
