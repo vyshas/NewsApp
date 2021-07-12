@@ -6,13 +6,13 @@
 
     <include-dynamic
         android:id="@+id/nav_home"
-        app:graphPackage="${applicationId}.features.home"
+        app:graphPackage="${applicationId}.home"
         app:graphResName="nav_home"
         app:moduleName="home" />
 
     <include-dynamic
         android:id="@+id/nav_sports"
-        app:graphPackage="${applicationId}.features.sports"
+        app:graphPackage="${applicationId}.sports"
         app:graphResName="nav_sports"
         app:moduleName="sports" />
 
