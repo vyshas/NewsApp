@@ -29,8 +29,12 @@ plugins {
     id("kotlin-allopen")
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
 dependencies {
-    implementation(Dependencies.KOTLIN)
     implementation(Dependencies.COROUTINES)
     implementation(Dependencies.TIMBER)
 

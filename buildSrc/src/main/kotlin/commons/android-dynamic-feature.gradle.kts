@@ -98,7 +98,6 @@ dependencies {
     implementation(project(BuildModules.APP))
     implementation(project(BuildModules.CORE))
 
-    implementation(Dependencies.KOTLIN)
     implementation(Dependencies.APPCOMPAT)
     implementation(Dependencies.COROUTINES)
     implementation(Dependencies.COROUTINES_ANDROID)

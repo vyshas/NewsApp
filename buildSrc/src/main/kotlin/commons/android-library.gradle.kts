@@ -76,7 +76,6 @@ junitJacoco {
 }
 
 dependencies {
-    implementation(Dependencies.KOTLIN)
     implementation(Dependencies.COROUTINES)
     implementation(Dependencies.COROUTINES_ANDROID)
 

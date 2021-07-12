@@ -1,5 +1,7 @@
 package com.vyshas.core.data.annotations.di
 
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.vyshas.core.data.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -11,12 +13,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
-@InstallIn(SingletonComponent::class)
 @Module
-class NetworkModule {
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
         val interceptor = HttpLoggingInterceptor()
         if (BuildConfig.DEBUG) {
@@ -25,10 +27,10 @@ class NetworkModule {
         return interceptor
     }
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideOkHttp(
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor,
     ): OkHttpClient {
         return OkHttpClient
             .Builder()
@@ -38,21 +40,18 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideMoshiConverterFactory(): MoshiConverterFactory {
-        return MoshiConverterFactory.create()
-    }
-
-    @Singleton
-    @Provides
     fun provideRetrofit(
-        okHttpClient: OkHttpClient,
-        moshiConverterFactory: MoshiConverterFactory
+        okHttpClient: OkHttpClient
     ): Retrofit {
         return Retrofit
             .Builder()
             .client(okHttpClient)
             .baseUrl(BuildConfig.NEWS_API_BASE_URL)
-            .addConverterFactory(moshiConverterFactory)
+            .addConverterFactory(
+                MoshiConverterFactory.create(
+                    Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+                )
+            )
             .build()
     }
 }

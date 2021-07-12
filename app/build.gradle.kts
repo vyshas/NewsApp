@@ -143,6 +143,15 @@ dependencies {
     implementation(Dependencies.PLAY_CORE)
     implementation(Dependencies.PLAY_CORE_KTX)
 
+
+    implementation(Dependencies.RETROFIT)
+    implementation(Dependencies.RETROFIT_CONVERTER)
+    implementation(Dependencies.MOSHI)
+    implementation(Dependencies.MOSHI_KTX)
+    implementation(Dependencies.MOSHI_CODEGEN)
+    implementation(Dependencies.MOSHI_ADAPTER)
+    implementation(Dependencies.RETROFI_MOSHI_CONVERTER)
+
     implementation(Dependencies.DAGGER)
     implementation(Dependencies.HILT)
 
