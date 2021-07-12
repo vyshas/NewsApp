@@ -129,7 +129,6 @@ junitJacoco {
 dependencies {
     implementation(project(BuildModules.CORE))
 
-    implementation(Dependencies.KOTLIN)
     implementation(Dependencies.APPCOMPAT)
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.CONSTRAIN_LAYOUT)
