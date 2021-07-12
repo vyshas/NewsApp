@@ -32,8 +32,6 @@ allOpen {
 dependencies {
     api(project(":core-domain"))
 
-    implementation(Dependencies.ROOM)
-    implementation(Dependencies.ROOM_KTX)
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.CORE_KTX)
@@ -47,6 +45,5 @@ dependencies {
     implementation(Dependencies.RETROFI_MOSHI_CONVERTER)
 
     kapt(AnnotationProcessorsDependencies.DATABINDING)
-    kapt(AnnotationProcessorsDependencies.ROOM)
     kapt(AnnotationProcessorsDependencies.LIFECYCLE_COMPILER)
 }

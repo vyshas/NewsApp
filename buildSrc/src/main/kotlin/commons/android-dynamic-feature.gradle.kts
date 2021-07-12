@@ -26,6 +26,7 @@ import dependencies.AnnotationProcessorsDependencies
 import extensions.addTestsDependencies
 import extensions.implementation
 import extensions.kapt
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("com.android.dynamic-feature")
@@ -70,25 +71,6 @@ android {
         isEnabled=true
     }
 
-    flavorDimensions(BuildProductDimensions.ENVIRONMENT)
-    productFlavors {
-        ProductFlavorDevelop.libraryCreate(this)
-        ProductFlavorQA.libraryCreate(this)
-        ProductFlavorProduction.libraryCreate(this)
-    }
-
-    sourceSets {
-        getByName("main") {
-            java.srcDir("src/main/kotlin")
-        }
-        getByName("test") {
-            java.srcDir("src/test/kotlin")
-        }
-        getByName("androidTest") {
-            java.srcDir("src/androidTest/kotlin")
-        }
-    }
-
     lintOptions {
         lintConfig = rootProject.file(".lint/config.xml")
         isCheckAllWarnings = true
@@ -101,6 +83,10 @@ android {
     }
     kapt {
         correctErrorTypes = true
+    }
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions { jvmTarget = "1.8" }
     }
 }
 
@@ -117,6 +103,7 @@ dependencies {
     implementation(Dependencies.COROUTINES)
     implementation(Dependencies.COROUTINES_ANDROID)
     implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_DYNAMIC_FEATURE)
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.LIFECYCLE_VIEWMODEL)
     implementation(Dependencies.CORE_KTX)
@@ -132,8 +119,6 @@ dependencies {
     kapt(AnnotationProcessorsDependencies.HILT)
     kapt(AnnotationProcessorsDependencies.DAGGER)
 
-    kapt(AnnotationProcessorsDependencies.DATABINDING)
-    kapt(AnnotationProcessorsDependencies.ROOM)
     kapt(AnnotationProcessorsDependencies.LIFECYCLE_COMPILER)
 
     testImplementation(project(BuildModules.Libraries.TEST_UTILS))
