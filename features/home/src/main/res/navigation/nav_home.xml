@@ -9,6 +9,16 @@
         android:id="@+id/fragment_home"
         android:name="com.vyshas.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragment_home_to_homeDetailsFragment"
+            app:destination="@id/homeDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeDetailsFragment"
+        android:name="com.vyshas.home.HomeDetailsFragment"
+        android:label="fragment_home_details"
+        tools:layout="@layout/fragment_home_details" />
 
 </navigation>

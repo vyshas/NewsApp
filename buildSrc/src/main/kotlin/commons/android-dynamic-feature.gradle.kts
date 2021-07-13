@@ -105,6 +105,9 @@ dependencies {
     implementation(Dependencies.NAVIGATION_DYNAMIC_FEATURE)
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.LIFECYCLE_VIEWMODEL)
+    implementation(Dependencies.LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependencies.LIFECYCLE_SAVEDSTATE_KTX)
+
     implementation(Dependencies.CORE_KTX)
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.CONSTRAIN_LAYOUT)
