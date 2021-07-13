@@ -24,7 +24,7 @@ object BuildDependenciesVersions {
     const val COROUTINES = "1.4.3"
     const val ROOM = "2.2.5"
     const val RECYCLE_VIEW = "1.2.0"
-    const val NAVIGATION = "2.3.5"
+    const val NAVIGATION = "2.4.0-alpha04"
     const val LIFECYCLE = "2.3.1"
     const val CORE_KTX = "1.3.2"
     const val FRAGMENT_KTX = "1.3.3"

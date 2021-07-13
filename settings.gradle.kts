@@ -1,16 +1,11 @@
-/*dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}*/
 include(
     ":app",
     ":core",
     ":libraries:test_utils",
     ":core-domain",
-    ":core-data"
+    ":core-data",
+    ":features:home",
+    ":features:sports"
 )
 rootProject.name = "NewsApp"
 rootProject.buildFileName = "build.gradle.kts"

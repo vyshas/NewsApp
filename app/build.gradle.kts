@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-import dependencies.Dependencies
-import dependencies.DebugDependencies
 import dependencies.AnnotationProcessorsDependencies
+import dependencies.DebugDependencies
+import dependencies.Dependencies
 import extensions.addTestsDependencies
-import extensions.implementation
 import extensions.debugImplementation
+import extensions.implementation
 import extensions.kapt
 
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
-    id(BuildPlugins.HILT)
     id(BuildPlugins.KOTLIN_ANDROID)
     id(BuildPlugins.KOTLIN_KAPT)
+    id(BuildPlugins.HILT)
     id(BuildPlugins.KOTLIN_ALLOPEN)
     id(BuildPlugins.NAVIGATION_SAFE_ARGS)
     id(BuildPlugins.JACOCO)
@@ -69,17 +69,6 @@ android {
         }
     }
 
-    flavorDimensions(BuildProductDimensions.ENVIRONMENT)
-    productFlavors {
-        ProductFlavorDevelop.appCreate(this)
-        ProductFlavorQA.appCreate(this)
-        ProductFlavorProduction.appCreate(this)
-    }
-
-/*    dynamicFeatures = mutableSetOf(
-        BuildModules.Features.HOME,
-    )*/
-
     buildFeatures {
         dataBinding = true
         viewBinding = true
@@ -105,17 +94,6 @@ android {
         unitTests.isReturnDefaultValues = true
     }
 
-    sourceSets {
-        getByName("main") {
-            java.srcDir("src/main/kotlin")
-        }
-        getByName("test") {
-            java.srcDir("src/test/kotlin")
-        }
-        getByName("androidTest") {
-            java.srcDir("src/androidTest/kotlin")
-        }
-    }
     kapt {
         correctErrorTypes = true
     }
@@ -134,7 +112,14 @@ android {
         exclude("META-INF/licenses/**")
         exclude("META-INF/LGPL2.1")
     }
+    dynamicFeatures = mutableSetOf(
+        BuildModules.Features.HOME,
+        BuildModules.Features.SPORTS
+    )
 
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions { jvmTarget = "1.8" }
+    }
 }
 
 junitJacoco {
@@ -144,15 +129,27 @@ junitJacoco {
 dependencies {
     implementation(project(BuildModules.CORE))
 
-    implementation(Dependencies.KOTLIN)
     implementation(Dependencies.APPCOMPAT)
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.CONSTRAIN_LAYOUT)
     implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_UI)
+    implementation(Dependencies.NAVIGATION_DYNAMIC_FEATURE)
+    implementation(Dependencies.FRAGMENT_KTX)
+    implementation(Dependencies.CORE_KTX)
     implementation(Dependencies.TIMBER)
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.PLAY_CORE)
     implementation(Dependencies.PLAY_CORE_KTX)
+
+
+    implementation(Dependencies.RETROFIT)
+    implementation(Dependencies.RETROFIT_CONVERTER)
+    implementation(Dependencies.MOSHI)
+    implementation(Dependencies.MOSHI_KTX)
+    implementation(Dependencies.MOSHI_CODEGEN)
+    implementation(Dependencies.MOSHI_ADAPTER)
+    implementation(Dependencies.RETROFI_MOSHI_CONVERTER)
 
     implementation(Dependencies.DAGGER)
     implementation(Dependencies.HILT)
