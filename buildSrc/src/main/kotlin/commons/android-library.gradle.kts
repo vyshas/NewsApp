@@ -32,7 +32,6 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("kotlin-allopen")
     id("com.vanniktech.android.junit.jacoco")
-    id("com.vanniktech.dependency.graph.generator")
 }
 
 android {

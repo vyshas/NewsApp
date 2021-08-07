@@ -21,7 +21,6 @@ import dependencies.Dependencies
 import dependencies.TestDependencies
 import extensions.implementation
 import extensions.kapt
-import gradle.kotlin.dsl.accessors._94f23b8d474cac2ca34143725ef406d2.testImplementation
 
 plugins {
     id("kotlin")
