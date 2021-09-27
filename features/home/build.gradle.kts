@@ -1,3 +1,3 @@
 plugins {
-    id("commons.android-dynamic-feature")
+    id("commons.android-feature-library")
 }

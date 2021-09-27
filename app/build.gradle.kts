@@ -111,10 +111,6 @@ android {
         exclude("META-INF/licenses/**")
         exclude("META-INF/LGPL2.1")
     }
-    dynamicFeatures = mutableSetOf(
-        BuildModules.Features.HOME,
-        BuildModules.Features.SPORTS
-    )
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions { jvmTarget = "1.8" }
@@ -127,6 +123,8 @@ junitJacoco {
 
 dependencies {
     implementation(project(BuildModules.CORE))
+    implementation(project(BuildModules.Features.HOME))
+    implementation(project(BuildModules.Features.SPORTS))
 
     implementation(Dependencies.APPCOMPAT)
     implementation(Dependencies.MATERIAL)
